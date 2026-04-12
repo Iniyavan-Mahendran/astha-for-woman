@@ -11,12 +11,12 @@ const ProgramCard = ({ title, description, icon }: ProgramCardProps) => (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="gradient-card rounded-xl p-8 border hover:shadow-lg transition-shadow"
+    className="gradient-card rounded-2xl p-10 border hover:shadow-lg transition-all hover:-translate-y-1 group"
   >
-    <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-secondary text-primary mb-5">
+    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary text-primary mb-6 group-hover:scale-110 transition-transform">
       {icon}
     </div>
-    <h3 className="font-display text-xl font-semibold text-foreground mb-3">{title}</h3>
+    <h3 className="font-display text-xl font-semibold text-foreground mb-4">{title}</h3>
     <p className="text-muted-foreground leading-relaxed">{description}</p>
   </motion.div>
 );
