@@ -11,13 +11,13 @@ const StatCard = ({ value, label, icon }: StatCardProps) => (
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="text-center p-6"
+    className="text-center p-8 rounded-2xl bg-card border shadow-sm hover:shadow-md transition-all"
   >
-    <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-secondary text-primary mb-4">
+    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary text-primary mb-5">
       {icon}
     </div>
-    <div className="font-display text-3xl md:text-4xl font-bold text-primary">{value}</div>
-    <div className="text-muted-foreground mt-1">{label}</div>
+    <div className="font-display text-3xl md:text-4xl font-bold text-primary mb-1">{value}</div>
+    <div className="text-muted-foreground text-sm font-medium">{label}</div>
   </motion.div>
 );
 
