@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Heart, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import afwLogo from "@/assets/AFW.svg";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -19,12 +20,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-8 h-8 rounded-lg gradient-accent flex items-center justify-center">
-                <Heart className="h-4 w-4 text-primary-foreground fill-primary-foreground/30" />
-              </div>
-              <span className="font-display text-lg font-bold text-primary-foreground">
-                Aastha for Women
-              </span>
+              <img src={afwLogo} alt="Aastha for Women" className="h-9 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm leading-relaxed text-primary-foreground/50">
               {t("footer.tagline")}

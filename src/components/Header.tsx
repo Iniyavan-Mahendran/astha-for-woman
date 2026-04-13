@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import afwLogo from "@/assets/AFW.svg";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -24,12 +25,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <Link to="/" className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl gradient-accent flex items-center justify-center">
-            <Heart className="h-5 w-5 text-primary-foreground fill-primary-foreground/30" />
-          </div>
-          <span className="font-display text-xl font-bold text-foreground tracking-tight">
-            Aastha <span className="text-primary">for Women</span>
-          </span>
+          <img src={afwLogo} alt="Aastha for Women" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Nav */}

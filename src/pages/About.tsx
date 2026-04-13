@@ -1,7 +1,8 @@
-import { Heart, Eye, Target } from "lucide-react";
+import { Eye, Target } from "lucide-react";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import { useTranslation } from "react-i18next";
+import founderImage from "@/assets/Founder_image.jpeg";
 
 const About = () => {
   const { t } = useTranslation();
@@ -39,11 +40,14 @@ const About = () => {
           <div className="mt-24">
             <SectionHeading title={t("about.founderTitle")} />
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="gradient-card rounded-2xl p-12 border shadow-sm max-w-3xl mx-auto">
-              <div className="flex items-center gap-5 mb-8">
-                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center">
-                  <Heart className="h-8 w-8 text-primary" />
-                </div>
-                <div>
+              <div className="flex flex-col sm:flex-row items-center gap-6 mb-8">
+                {/* TODO: Replace founder image if needed */}
+                <img
+                  src={founderImage}
+                  alt={t("about.founderName")}
+                  className="w-24 h-24 rounded-2xl object-cover shadow-md flex-shrink-0"
+                />
+                <div className="text-center sm:text-left">
                   <h4 className="font-display font-semibold text-foreground text-lg">{t("about.founderName")}</h4>
                   <p className="text-muted-foreground text-sm">{t("about.founderRole")}</p>
                 </div>
