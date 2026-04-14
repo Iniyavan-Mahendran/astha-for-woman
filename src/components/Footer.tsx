@@ -56,9 +56,9 @@ const Footer = () => {
               {t("footer.contact")}
             </h4>
             <div className="space-y-3 text-sm text-primary-foreground/50">
-              <p className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-accent" /> +91 98765 43210</p>
-              <p className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-accent" /> info@aasthaforwomen.org</p>
-              <p className="flex items-center gap-2.5"><MapPin className="h-4 w-4 text-accent" /> New Delhi, India</p>
+              <p className="flex items-center gap-2.5"><Phone className="h-4 w-4 text-accent" /> +91 88010 66007</p>
+              <p className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-accent" /> Asthaforwomen@gmail.com</p>
+              <p className="flex items-center gap-2.5"><MapPin className="h-4 w-4 text-accent" /> Pune, Maharastra, India</p>
             </div>
           </div>
         </div>

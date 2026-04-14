@@ -22,8 +22,8 @@ const Contact = () => {
               <h3 className="font-display text-xl font-semibold text-foreground mb-8">{t("contact.getInTouch")}</h3>
               <div className="space-y-6">
                 {[
-                  { icon: <Phone className="h-5 w-5" />, label: t("contact.phone"), value: "+91 98765 43210" },
-                  { icon: <Mail className="h-5 w-5" />, label: t("contact.email"), value: "info@aasthaforwomen.org" },
+                  { icon: <Phone className="h-5 w-5" />, label: t("contact.phone"), value: "+91 88010 66007" },
+                  { icon: <Mail className="h-5 w-5" />, label: t("contact.email"), value: "Asthaforwomen@gmail.com" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
                     <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center text-primary flex-shrink-0">
