@@ -1,57 +1,46 @@
-import { Users, Heart, BookOpen, HandHeart, Star, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
-import SectionHeading from "@/components/SectionHeading";
-import StatCard from "@/components/StatCard";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import HeroSection from '@/components/HeroSection';
+import TestimonialCard from '@/components/TestimonialCard';
 
-const Impact = () => {
-  const { t } = useTranslation();
+const impactStats = [
+  { label: 'Women Reached', value: '5,000+' },
+  { label: 'Counselling Sessions', value: '1,200+' },
+  { label: 'Women Trained', value: '800+' },
+  { label: 'Active Volunteers', value: '50+' },
+  { label: 'Awards Won', value: '15+' },
+  { label: 'Communities Served', value: '12' },
+];
 
-  const stories = [
-    { name: "Rekha", initial: "R", story: t("impact.rekhaStory") },
-    { name: "Fatima", initial: "F", story: t("impact.fatimaStory") },
-    { name: "Sunita", initial: "S", story: t("impact.sunitaStory") },
-  ];
+const stories = [
+  { name: 'Rekha', quote: 'Astha For Women gave me confidence and hope after a tough phase.', image: 'https://randomuser.me/api/portraits/women/68.jpg', role: 'Member' },
+  { name: 'Fatima', quote: 'My rights were respected and I found guidance quickly.', image: 'https://randomuser.me/api/portraits/women/22.jpg', role: 'Member' },
+  { name: 'Sunita', quote: 'Their team was compassionate and supportive throughout.', image: 'https://randomuser.me/api/portraits/women/36.jpg', role: 'Member' },
+];
 
-  return (
-    <div>
-      <section className="gradient-hero py-24">
-        <div className="container mx-auto px-4">
-          <SectionHeading title={t("impact.title")} subtitle={t("impact.pageSubtitle")} />
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            <StatCard icon={<Users className="h-5 w-5" />} value="5,000+" label={t("impact.womenReached")} />
-            <StatCard icon={<Heart className="h-5 w-5" />} value="1,200+" label={t("impact.counselingSessions")} />
-            <StatCard icon={<BookOpen className="h-5 w-5" />} value="800+" label={t("impact.womenTrained")} />
-            <StatCard icon={<HandHeart className="h-5 w-5" />} value="50+" label={t("impact.activeVolunteers")} />
-            <StatCard icon={<Star className="h-5 w-5" />} value="15+" label={t("impact.awardsWon")} />
-            <StatCard icon={<MapPin className="h-5 w-5" />} value="12" label={t("impact.communitiesServed")} />
+const Impact: React.FC = () => (
+  <>
+    <HeroSection title="Our Impact" subtitle="Empowering lives, building safe communities">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-8">
+        {impactStats.map((stat) => (
+          <div key={stat.label} className="bg-purple-50 rounded-xl shadow-md p-4 flex flex-col items-center">
+            <div className="text-2xl font-bold text-purple-900 font-montserrat">{stat.value}</div>
+            <div className="text-sm text-gray-700 font-poppins mt-1">{stat.label}</div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </HeroSection>
 
-      <section className="py-24 bg-muted/40">
-        <div className="container mx-auto px-4">
-          <SectionHeading title={t("impact.storiesTitle")} subtitle={t("impact.storiesSubtitle")} />
-          <div className="grid md:grid-cols-3 gap-8">
-            {stories.map((s) => (
-              <motion.div key={s.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card border rounded-2xl p-10 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-primary font-display font-bold text-lg mb-5">
-                  {s.initial}
-                </div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-4">{s.name}'s Story</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.story}</p>
-              </motion.div>
-            ))}
-          </div>
+    <section className="py-16 bg-purple-50 mt-14">
+      <div className="max-w-5xl mx-auto px-5">
+        <h2 className="font-montserrat text-2xl text-purple-800 font-bold mb-6 text-center">Stories of Change</h2>
+        <div className="grid md:grid-cols-3 gap-8 mt-4">
+          {stories.map((story) => (
+                      <TestimonialCard key={story.name} name={story.name} quote={story.quote} image={story.image} role={story.role} />
+                    ))}
         </div>
-      </section>
-    </div>
-  );
-};
+      </div>
+    </section>
+  </>
+);
 
 export default Impact;

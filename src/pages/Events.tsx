@@ -1,57 +1,43 @@
-import SectionHeading from "@/components/SectionHeading";
-import EventCard, { type EventCardProps } from "@/components/EventCard";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import HeroSection from '@/components/HeroSection';
+import EventCard from '@/components/EventCard';
 
-const Events = () => {
-  const { t } = useTranslation();
+const upcomingEvents = [
+  {
+    title: 'Community Health Camp', date: 'May 15, 2026', location: 'Dwarka Community Hall', description: 'Free health checks & awareness for women.', type: 'Health',
+  },
+  {
+    title: 'Self-Defence Workshop', date: 'May 22, 2026', location: 'Astha Center', description: 'Empowering women with practical self-defence techniques.', type: 'Workshop',
+  },
+  {
+    title: 'Annual Fundraiser Night', date: 'June 8, 2026', location: 'Hotel Grand', description: 'Join us for an evening to support women empowerment.', type: 'Fundraiser',
+  },
+];
 
-  /* ───────────────────────────────────────────────
-   * EVENT DATA — edit entries below to add/remove events.
-   * Each entry supports an optional `image` field.
-   * Example:  image: "/images/event-photo.jpg"
-   * If omitted the card renders cleanly without an image.
-   * ─────────────────────────────────────────────── */
+const pastEvents = [
+  {
+    title: "Women's Day Celebration", date: 'March 8, 2026', location: 'Astha Center', description: "Honoring women's achievements and contributions.", type: 'Celebration',
+  },
+  {
+    title: 'Legal Rights Awareness', date: 'Feb 14, 2026', location: 'Community Hall, Rohini', description: 'Workshop on legal protections for women.', type: 'Workshop',
+  },
+];
 
-  const upcoming: EventCardProps[] = [
-    // TODO: Add real event images when available
-    { title: t("events.healthCamp"), date: "May 15, 2026", time: "10:00 AM – 4:00 PM", location: "Community Hall, Dwarka", type: "Health" },
-    { title: t("events.selfDefense"), date: "May 22, 2026", time: "9:00 AM – 1:00 PM", location: "Aastha Center, Janakpuri", type: "Workshop" },
-    { title: t("events.fundraiser"), date: "June 8, 2026", time: "6:00 PM – 10:00 PM", location: "Hotel Grand, CP", type: "Fundraiser" },
-  ];
-
-  const past: EventCardProps[] = [
-    { title: t("events.womensDay"), date: "March 8, 2026", location: "Aastha Center", type: "Celebration", isPast: true },
-    { title: t("events.legalRights"), date: "February 14, 2026", location: "Community Hall, Rohini", type: "Workshop", isPast: true },
-    { title: t("events.graduation"), date: "January 25, 2026", location: "Aastha Center", type: "Ceremony", isPast: true },
-  ];
-
-  return (
-    <div>
-      <section className="gradient-hero py-24">
-        <div className="container mx-auto px-4">
-          <SectionHeading title={t("events.title")} subtitle={t("events.subtitle")} />
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <SectionHeading title={t("events.upcoming")} />
-          <div className="grid md:grid-cols-3 gap-8 mb-24">
-            {upcoming.map((e) => (
-              <EventCard key={e.title} {...e} />
-            ))}
-          </div>
-
-          <SectionHeading title={t("events.past")} />
-          <div className="grid md:grid-cols-3 gap-8">
-            {past.map((e) => (
-              <EventCard key={e.title} {...e} />
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
+const Events: React.FC = () => (
+  <>
+    <HeroSection title="Events & Workshops" subtitle="Connect, learn and grow with our programs" />
+    <section className="py-16 px-4 max-w-6xl mx-auto">
+      <h2 className="font-montserrat text-2xl text-purple-800 font-bold mb-6">Upcoming Events</h2>
+      <div className="grid md:grid-cols-3 gap-8">{
+        upcomingEvents.map(e => <EventCard key={e.title} {...e} />)
+      }</div>
+      <h2 className="font-montserrat text-2xl text-purple-800 font-bold mt-14 mb-6">Past Events</h2>
+      <div className="grid md:grid-cols-3 gap-8">{
+        pastEvents.map(e => <EventCard key={e.title} {...e} />)
+      }</div>
+    </section>
+  </>
+);
 
 export default Events;
+
