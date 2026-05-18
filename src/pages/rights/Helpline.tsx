@@ -8,7 +8,7 @@ const Helpline: React.FC = () => (
       <li><strong>Police Emergency:</strong> 100</li>
       <li><strong>Child Helpline:</strong> 1098</li>
       <li><strong>Cyber Crime Helpline:</strong> 155260</li>
-      <li><strong>Astha For Women Support:</strong> <a href="https://wa.me/919999999999?text=Hello%20Astha%20For%20Women%2C%20I%20need%20support%20and%20guidance." target="_blank" rel="noopener" className="text-green-600 underline">WhatsApp</a></li>
+      <li><strong>Astha For Women Support:</strong> <a href="https://wa.me/918801066007?text=Hello%20Astha%20For%20Women%2C%20I%20need%20support%20and%20guidance." target="_blank" rel="noopener" className="text-green-600 underline">WhatsApp</a></li>
     </ul>
     <div className="mt-8 text-center">
       <a href="/rights" className="bg-purple-700 text-white rounded-xl px-6 py-2 font-poppins shadow hover:bg-purple-800 transition">Back to Rights Overview</a>
